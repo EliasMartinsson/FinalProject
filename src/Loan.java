@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Loan {
@@ -8,19 +9,32 @@ public class Loan {
         RETURNED
     }
 
+    String bookTitle;
+
     private Member owner;
 
-    private DateTimeFormatter returnnDate = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    private LocalDate returnDate;
 
     private LoanStatus loanStatus;
 
-    public Loan(Member owner, DateTimeFormatter returnnDate, LoanStatus loanStatus){
-        owner = this.owner;
-        returnnDate = this.returnnDate;
-        loanStatus = this.loanStatus;
+    public void setLoanStatus(LoanStatus loanStatus) {
+        this.loanStatus = loanStatus;
     }
 
-    public void RegisterLoan(){
-
+    public String getBookTitle() {
+        return bookTitle;
     }
+
+    public Loan(Member owner, LocalDate returnDate, LoanStatus loanStatus, String bookTitle){
+        this.owner = owner;
+        this.returnDate = returnDate;
+        this.loanStatus = loanStatus;
+        this.bookTitle = bookTitle;
+    }
+
+    public void Print(){
+        System.out.println("Return date: " +this.returnDate);
+        System.out.println("Loan status: " + this.loanStatus);
+    }
+
 }
