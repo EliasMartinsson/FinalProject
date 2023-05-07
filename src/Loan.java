@@ -32,7 +32,7 @@ public class Loan {
         this.bookTitle = bookTitle;
     }
 
-    public void Print(){
+    public void print(){
         System.out.println("Return date: " +this.returnDate);
         System.out.println("Loan status: " + this.loanStatus);
     }

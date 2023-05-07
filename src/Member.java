@@ -8,7 +8,7 @@ public class Member {
 
     List<Loan> loans;
 
-    private boolean adminPermissions = false;
+    public boolean adminPermissions = false;
 
     public Member(String id, String name, List<Book> booksBorrowed, boolean adminPermissions, List<Loan> loans){
         this.id = id;
@@ -30,12 +30,27 @@ public class Member {
         return booksBorrowed;
     }
 
-    public class Librarian extends Member{
-
-        public Librarian(String name, List<Book> booksBorrowed, boolean adminPermissions) {
-            super(id, name, booksBorrowed, adminPermissions, null);
-            adminPermissions = true;
+    public void print(){
+        //Print user data
+        System.out.println("Name: " +  this.name);
+        System.out.println("Id: " + this.id);
+        for (Book b: this.getBooksBorrowed()
+        ) {
+            System.out.println("Book : " + b.title + b.author);
         }
+
+        //Print all the users loans
+        for (Loan l: this.loans
+        ) {
+            l.print();
+        }
+        System.out.println("------------------------------------");
     }
 
+    public static class Librarian extends Member{
+
+        public Librarian(String id, String name, List<Book> booksBorrowed, boolean adminPermissions, List<Loan> loans) {
+            super(id, name, booksBorrowed, adminPermissions, loans);
+        }
+    }
 }

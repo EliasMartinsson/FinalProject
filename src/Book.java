@@ -9,7 +9,7 @@ public class Book {
 
     boolean borrowed;
 
-    public Book(String title, String author, int publicationYear, boolean borrowed){
+    public Book(String title, String author, int publicationYear, boolean borrowed) {
 
         this.title = title;
         this.author = author;
@@ -27,5 +27,14 @@ public class Book {
 
     public String getTitle() {
         return title;
+    }
+
+    public static class Magazine extends Book {
+        private int issueNumber;
+
+        public Magazine(String title, String author, int publicationYear, boolean borrowed, int issueNumber) {
+            super(title, author, publicationYear, borrowed);
+            this.issueNumber = issueNumber;
+        }
     }
 }
