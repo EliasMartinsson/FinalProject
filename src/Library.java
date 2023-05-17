@@ -20,7 +20,7 @@ public class Library {
 
         //Creating instances of objects to test program
         Book testBook = new Book("1984", "Orwell", 1948, false);
-        Book.Magazine testMagazine = new Book.Magazine("Spiderman", "Stan Lee", 1962, false, 1);
+        Magazine testMagazine = new Magazine("Spiderman", "Stan Lee", 1962, false, 1);
         books.add(testMagazine);
         books.add(testBook);
         Member.Librarian librarian = new Member.Librarian(UUID.randomUUID().toString(), "Admin", new ArrayList<>(), true, new ArrayList<>());
@@ -29,7 +29,6 @@ public class Library {
         members.add(librarian);
         System.out.println(test.getId());
         System.out.println(librarian.getId());
-
 
         EventBooker eventSystem = new EventBooker();
         List<Book> books;
@@ -106,8 +105,9 @@ public class Library {
         }
     }
 
+    //Method that creates new instances of the class book
     public static void addBook(){
-        //Method that creates new instances of the class book
+
         String author;
         String title;
         int publicationYear;
@@ -150,6 +150,7 @@ public class Library {
                     System.out.println("------------------------------------------------------------\n" +
                             "\nError! Submitted integer is not a valid alternative\n" +
                             "\n------------------------------------------------------------");
+
                 }
                 break;
             }
@@ -159,6 +160,7 @@ public class Library {
                         "\nError! Your answer is not in the form of a integer\n" +
                         "\n------------------------------------------------------------");
             }
+            scanner.next();
         }
         return choice;
     }
