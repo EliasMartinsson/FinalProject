@@ -23,7 +23,7 @@ public class Library {
         Magazine testMagazine = new Magazine("Spiderman", "Stan Lee", 1962, false, 1);
         books.add(testMagazine);
         books.add(testBook);
-        Member.Librarian librarian = new Member.Librarian(UUID.randomUUID().toString(), "Admin", new ArrayList<>(), true, new ArrayList<>());
+        Librarian librarian = new Librarian(UUID.randomUUID().toString(), "Admin", new ArrayList<>(), true, new ArrayList<>());
         Member test = new Member(UUID.randomUUID().toString(), "Test", new ArrayList<>(), false, new ArrayList<>());
         members.add(test);
         members.add(librarian);
